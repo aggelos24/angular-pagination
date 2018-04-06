@@ -1,45 +1,45 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  background-color: skyblue;
-  margin: 0;
+ 	background-color: skyblue;
+	margin: 0;
 }
 
 .main {
-  background-color: white;
-  padding: 25px;
-  width: 70%;
-  margin: 50px auto 50px auto
+	background-color: white;
+	padding: 25px;
+	width: 70%;
+	margin: 50px auto 50px auto
 }
 
 table {
-  width: 100%;
+	width: 100%;
 }
 
 th, td {
-  width: 25%;
-  text-align: center;
-  padding: 10px;
+	width: 25%;
+	text-align: center;
+	padding: 10px;
 }
 
 table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 
 th, td {
-  padding: 5px 15px;
+	padding: 5px 15px;
 }
 
 button {
-  font-size: 80%;
-  border: 1px solid black;
-  padding: 7px;
-  margin-top: 5px;
-  border-radius: 5px;
-  cursor: pointer;
+	font-size: 80%;
+	border: 1px solid black;
+	padding: 7px;
+	margin-top: 5px;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 button:disabled {
@@ -47,32 +47,32 @@ button:disabled {
 }
 
 input {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 a {
-  color: dodgerblue;
-  text-decoration: none;
+	color: dodgerblue;
+	text-decoration: none;
 }
 
 .mt-10 {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .mb-10 {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .red-letters {
-  color: red;
+	color: red;
 }
 
 .active {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 @media screen and (max-width: 1000px) {
-  .main {
-    width: 100%;
-  }
+	.main {
+		width: 100%;
+	}
 }
