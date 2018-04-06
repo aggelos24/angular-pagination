@@ -1,0 +1,50 @@
+<div class="main">
+  <div *ngIf="errorMessage != ''" class="red-letters mb-10"> {{ errorMessage }} </div>
+  <input type="number" [(ngModel)]="limit" (ngModelChange)="changeLimit()" required>
+
+  <table class="mt-10">
+    <tr>
+      <th>
+        <a *ngIf="sort != 'id'" href="javascript:void(0)" (click)="changeSorting('id', 'asc')"> ID </a>
+        <a *ngIf="sort == 'id' && order == 'asc'" href="javascript:void(0)" (click)="changeSorting('id', 'desc')"> ID ↑ </a>
+        <a *ngIf="sort == 'id' && order == 'desc'" href="javascript:void(0)" (click)="changeSorting('id', 'asc')"> ID ↓ </a>
+      </th>
+      <th>
+        <a *ngIf="sort != 'username'" href="javascript:void(0)" (click)="changeSorting('username', 'asc')"> username </a>
+        <a *ngIf="sort == 'username' && order == 'asc'" href="javascript:void(0)" (click)="changeSorting('username', 'desc')"> Username ↑ </a>
+        <a *ngIf="sort == 'username' && order == 'desc'" href="javascript:void(0)" (click)="changeSorting('username', 'asc')"> Username ↓ </a>
+      </th>
+      <th>
+        <a *ngIf="sort != 'email'" href="javascript:void(0)" (click)="changeSorting('email', 'asc')"> Email </a>
+        <a *ngIf="sort == 'email' && order == 'asc'" href="javascript:void(0)" (click)="changeSorting('email', 'desc')"> Email ↑ </a>
+        <a *ngIf="sort == 'email' && order == 'desc'" href="javascript:void(0)" (click)="changeSorting('email', 'asc')"> Email ↓ </a>
+      </th>
+      <th>
+        <a *ngIf="sort != 'score'" href="javascript:void(0)" (click)="changeSorting('score', 'asc')"> Score </a>
+        <a *ngIf="sort == 'score' && order == 'asc'" href="javascript:void(0)" (click)="changeSorting('score', 'desc')"> Score ↑ </a>
+        <a *ngIf="sort == 'score' && order == 'desc'" href="javascript:void(0)" (click)="changeSorting('score', 'asc')"> Score ↓ </a>
+      </th>
+    </tr>
+    <tr *ngFor="let row of pageContent">
+      <td> {{ row.id }} </td>
+      <td> {{ row.username }} </td>
+      <td> {{ row.email }} </td>
+      <td> {{ row.score }} </td>
+    </tr>
+    <tr *ngIf="pageContent.length == 0">
+      <td class="red-letters" colspan="4"> No Data </td>
+    </tr>
+  </table>
+
+  <div *ngIf="size > limit" class="mt-10">
+    <button [disabled]="page == 1" (click)="changePage(page - 1)"> &laquo; </button>
+    <span *ngIf="page >= 3"> <button  (click)="changePage(1)"> 1 </button> </span>
+    <span *ngIf="page >= 4"> ... </span>
+    <button [ngClass]="{'active': buttonArray[0] == page}" (click)="changePage(buttonArray[0])"> {{ buttonArray[0] }} </button>
+    <button [ngClass]="{'active': buttonArray[1] == page}" (click)="changePage(buttonArray[1])"> {{ buttonArray[1] }} </button>
+    <button [ngClass]="{'active': buttonArray[2] == page}" (click)="changePage(buttonArray[2])"> {{ buttonArray[2] }} </button>
+    <span *ngIf="page <= (end - 3)"> ... </span>
+    <span *ngIf="page <= (end - 2)"> <button (click)="changePage(end)"> {{ end }} </button> </span>
+    <button [disabled]="page == end" (click)="changePage(page + 1)"> &raquo; </button>
+  </div>
+</div>
