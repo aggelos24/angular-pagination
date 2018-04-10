@@ -21,9 +21,9 @@ ng new myproject
 ```
 json-server --watch data.json
 ```
-Now you have a fake REST API, dont interrupt it
+Now you have a fake REST API, dont interrupt it.
 * Open a new terminal window, cd to your project's folder and type:
 ```
 ng serve --open
 ```
-You are ready, application must be running at localhost:4200
+You are ready, the application must be running at localhost:4200
