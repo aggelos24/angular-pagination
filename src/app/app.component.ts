@@ -35,46 +35,46 @@ export class AppComponent implements OnInit, OnDestroy {
 	constructor(private http: HttpClient) {}
 
 	ngOnInit() {
-		this.page = 1;														//initialize data
+		this.page = 1;								//initialize data
 		this.limit = 10;
 		this.sort = 'id';
 		this.order = 'asc';
 		this.buttonArray = [1, 2, 3];
 		this.errorMessage = '';
 
-		this.getSize();														//call function getSize
-		this.getData();														//call function getData
+		this.getSize();								//call function getSize
+		this.getData();								//call function getData
   }
 
 	getSize() {
-		let url: string = 'http://localhost:3000/size';						//this is the url from where we are going to get data
-		this.sizeSub = this.http.get<size>(url).subscribe(data => {			//subscribe to server's response
-			this.size = data.number;										//assign server's response to a variable
-			this.end = Math.ceil(this.size / this.limit);					//this is the number of last page
-			this.errorMessage = '';											//no error occured, so there is no error message
-		}, error => {														//in case of errror
-			this.pageContent = [];											//no data to display
-			this.errorMessage = 'Probably json-server isnt running';		//display error message
+		let url: string = 'http://localhost:3000/size';				//this is the url from where we are going to get data
+		this.sizeSub = this.http.get<size>(url).subscribe(data => {		//subscribe to server's response
+			this.size = data.number;					//assign server's response to a variable
+			this.end = Math.ceil(this.size / this.limit);			//this is the number of last page
+			this.errorMessage = '';						//no error occured, so there is no error message
+		}, error => {								//in case of errror
+			this.pageContent = [];						//no data to display
+			this.errorMessage = 'Probably json-server isnt running';	//display error message
 		});
 	}
 
 	getData() {
 		let url: string;
-		this.end = Math.ceil(this.size / this.limit);						//this is the number of last page
+		this.end = Math.ceil(this.size / this.limit);				//this is the number of last page
 		url = 'http://localhost:3000/data' + '?_page=' + this.page + '&_limit=' + this.limit + '&_sort=' + this.sort + '&_order=' + this.order;
 																			//if the url seems complicated, read the documentation of json-server on github
 		this.dataSub = this.http.get<data[]>(url).subscribe(data => {		//subscribe to server's response
-			this.pageContent = data;										//assign server's response to a variable
-			this.errorMessage = '';											//no error occured, so there is no error message
-		}, error => {														//in case of errror
-			this.pageContent = [];											//no data to display
-			this.errorMessage = 'Probably json-server isnt running';		//display error message
+			this.pageContent = data;					//assign server's response to a variable
+			this.errorMessage = '';						//no error occured, so there is no error message
+		}, error => {								//in case of errror
+			this.pageContent = [];						//no data to display
+			this.errorMessage = 'Probably json-server isnt running';	//display error message
 		});
 	}
 
 	changePage(page: number) {
-		this.page = page;													//set variable
-		if (this.page == 1 || this.page == 2) {								//depending on selected page, display the correct buttons for pagination
+		this.page = page;							//set variable
+		if (this.page == 1 || this.page == 2) {					//depending on selected page, display the correct buttons for pagination
 			this.buttonArray = [1, 2, 3];
 		}
 		else if (this.page == this.end || this.page == this.end - 1) {
@@ -83,25 +83,25 @@ export class AppComponent implements OnInit, OnDestroy {
 		else {
 			this.buttonArray = [this.page - 1, this.page, this.page + 1];
 		}
-		this.getData();														//call function getData
+		this.getData();								//call function getData
 	}
 
 	changeLimit() {
 		this.limit = (this.limit == null || this.limit <= 0)? 10: this.limit;
-																			//initialize limit if it is invalid
-		this.page = 1														//set page to 1
-		this.buttonArray = [1, 2, 3];										//display the correct buttons
-		this.getData();														//call function getData
+											//initialize limit if it is invalid
+		this.page = 1;								//set page to 1
+		this.buttonArray = [1, 2, 3];						//display the correct buttons
+		this.getData();								//call function getData
 	}
 
 	changeSorting(column: string, order: string) {
-		this.sort = column;													//set variables
+		this.sort = column;							//set variables
 		this.order = order;
 		this.getData();
 	}
 
 	ngOnDestroy() {
-		this.sizeSub.unsubscribe();											//you end the subscriptions to server
+		this.sizeSub.unsubscribe();						//you delete the subscriptions to server
 		this.dataSub.unsubscribe();
 	}
 }
