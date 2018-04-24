@@ -86,9 +86,8 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.getData();								//call function getData
 	}
 
-	changeLimit() {
-		this.limit = (this.limit == null || this.limit <= 0)? 10: this.limit;
-											//initialize limit if it is invalid
+	changeLimit(limit: number) {
+		this.limit = (limit == null || limit <= 0)? 10: limit;			//initialize limit if it is invalid
 		this.page = 1;								//set page to 1
 		this.buttonArray = [1, 2, 3];						//display the correct buttons
 		this.getData();								//call function getData
