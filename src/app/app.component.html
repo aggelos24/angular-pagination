@@ -1,6 +1,6 @@
 <div class="main">
 	<div *ngIf="errorMessage != ''" class="red-letters mb-10"> {{ errorMessage }} </div>
-	Limit: <input type="number" [(ngModel)]="limit" (ngModelChange)="changeLimit()" required>
+	Limit: <input type="number" (change)="changeLimit(limit.value)" #limit min="1" required>
 
 	<table class="mt-10">
 		<tr>
