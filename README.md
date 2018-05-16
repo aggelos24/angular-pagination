@@ -16,8 +16,8 @@ npm install -g json-server
 ```
 ng new myproject
 ```
-* Download angular-pagination, copy all the files inside src and paste them in your project's src folder.
-* cd to the path you have the data.json file and type:
+* Download angular-pagination, copy all the files inside `src` and paste them in your project's `src` folder.
+* cd to the path you have the `data.json` file and type:
 ```
 json-server --watch data.json
 ```
