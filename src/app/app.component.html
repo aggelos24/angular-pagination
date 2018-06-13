@@ -26,7 +26,7 @@
 					<a *ngIf="sort == 'score' && order == 'desc'" href="javascript:void(0)" (click)="changeSorting('score', 'asc')"> Score ↓ </a>
 				</th>
 			</tr>
-			<tr *ngFor="let row of pageContent">
+			<tr *ngFor="let row of tableData">
 				<td> {{ row.id }} </td>
 				<td> {{ row.username }} </td>
 				<td> {{ row.email }} </td>
