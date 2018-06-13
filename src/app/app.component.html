@@ -1,5 +1,6 @@
 <div class="main">
 	<div *ngIf="errorMessage" class="red-letters mb-10px"> {{ errorMessage }} </div>
+	
 	Limit: <input type="number" (change)="changeLimit(limitInput.value)" #limitInput min="1" required>
 
 	<div class="mt-10px table-container">
@@ -32,6 +33,7 @@
 				<td> {{ row.email }} </td>
 				<td> {{ row.score }} </td>
 			</tr>
+			
 			<tr *ngIf="noData == true">
 				<td class="red-letters" colspan="4"> No Data </td>
 			</tr>
