@@ -7,21 +7,8 @@ body {
 	margin: 0;
 }
 
-.main {
-	background-color: white;
-	padding: 25px;
-	width: 70%;
-	margin: 50px auto 50px auto
-}
-
-table {
-	width: 100%;
-}
-
-th, td {
-	width: 25%;
-	text-align: center;
-	padding: 10px;
+input {
+	font-size: 0.8rem;
 }
 
 table, th, td {
@@ -29,25 +16,27 @@ table, th, td {
 	border-collapse: collapse;
 }
 
+table {
+	width: 100%;
+}
+
 th, td {
 	padding: 5px 15px;
+	text-align: center;
 }
 
 button {
-	font-size: 80%;
+	font-size: 0.8rem;
 	border: 1px solid black;
 	padding: 7px;
 	margin-top: 5px;
 	border-radius: 5px;
 	cursor: pointer;
+	outline: 0;
 }
 
 button:disabled {
 	cursor: default;
-}
-
-input {
-	font-size: 80%;
 }
 
 a {
@@ -55,11 +44,11 @@ a {
 	text-decoration: none;
 }
 
-.mt-10 {
+.mt-10px {
 	margin-top: 10px;
 }
 
-.mb-10 {
+.mb-10px {
 	margin-bottom: 10px;
 }
 
@@ -67,11 +56,22 @@ a {
 	color: red;
 }
 
+.main {
+	background-color: white;
+	padding: 25px;
+	width: 80%;
+	margin: 50px auto 50px auto
+}
+
+.table-container {
+	overflow-x: auto;
+}
+
 .active {
 	font-weight: bold;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 655px) {
 	.main {
 		width: 100%;
 	}
