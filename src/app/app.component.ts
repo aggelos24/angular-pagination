@@ -77,6 +77,7 @@ export class AppComponent implements OnInit, OnDestroy {
 																			//if the url seems complicated, read the documentation of json-server on github
 		this.dataSub = this.http.get<Data[]>(url).subscribe(data => {		//subscribe to server's response
 			this.tableData = data;						//assign server's response to a variable
+			this.noData = false;
 			this.errorMessage = '';						//no error occured, so there is no error message
 		}, error => {								//in case of error
 			this.connectionErrorHandler();					//call function connectionErrorHandler
