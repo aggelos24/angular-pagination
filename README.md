@@ -14,6 +14,7 @@ npm install -g json-server
 json-server data.json
 ```
 Now you have a fake REST API, dont interrupt it. Now just click [here](https://aggelos24.github.io/angular-pagination/).
+
 If you want to build it yourself, you will need to follow some additional steps:
 
 * Install Angular
