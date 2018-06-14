@@ -60,6 +60,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	getSize() {
 		let url: string = 'http://localhost:3000/size';				//this is the url from where we are going to get data
+		
 		this.sizeSub = this.http.get<Size>(url).subscribe(data => {		//subscribe to server's response
 			this.size = data.number;					//assign server's response to a variable
 			this.errorMessage = null;					//no error occured, so there is no error message
