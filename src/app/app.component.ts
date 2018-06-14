@@ -53,7 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
 		this.sort = 'id';
 		this.order = 'asc';
 		this.errorMessage = null;
-		this.buttonArray = [1, 2, 3];
+		this.buttonArray = [ 1, 2, 3 ];
 
 		this.getSize();								//call function getSize
 	}
@@ -101,7 +101,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	changeLimit(limit: string) {
-		this.limit = (Number(limit) <= 0)? 10: Number(limit);			//initialize limit if it is invalid
+		this.limit = (Number(limit) > 0) ? Number(limit) : 10;			//initialize limit if it is invalid
 		this.page = 1;								//set page to 1
 		this.buttonArray = [ 1, 2, 3 ];						//display the correct buttons
 		
