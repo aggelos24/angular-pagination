@@ -66,7 +66,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.errorMessage = null;					//no error occured, so there is no error message
 			
 			this.getData();							//call function getData
-		}, error => {								//in case of errror
+		}, error => {								//in case of error
 			this.connectionErrorHandler();					//call function connectionErrorHandler
 		});
 	}
