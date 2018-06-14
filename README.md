@@ -26,7 +26,7 @@ npm install -g @angular/cli
 ng new myproject
 ```
 * Copy `angular-pagination` project's files inside `src` and paste them in your `myproject/src` folder.
-* Open a new terminal window, cd to your project's folder and type:
+* Open a new terminal window, cd to your `myproject` folder and type:
 ```
 ng serve --open
 ```
