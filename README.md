@@ -30,4 +30,4 @@ ng new myproject
 ```
 ng serve --open
 ```
-You are ready, the application must be running at localhost:4200
+You are ready, the application must be running at [localhost:4200](http://localhost:4200/)
