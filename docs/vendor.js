@@ -101,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -598,7 +598,7 @@ var localeEn = [
 var LOCALE_DATA = {};
 /**
  * Register global data to be used internally by Angular. See the
- * {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import additional locale data.
+ * ["I18n guide"](guide/i18n#i18n-pipes) to know how to import additional locale data.
  *
  * @experimental i18n support is experimental.
  */
@@ -1162,7 +1162,7 @@ function checkFullData(data) {
  * You should fallback to AM/PM when there are no rules available.
  *
  * Note: this is only available if you load the full locale data.
- * See the {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import additional locale
+ * See the ["I18n guide"](guide/i18n#i18n-pipes) to know how to import additional locale
  * data.
  *
  * @experimental i18n support is experimental.
@@ -1186,7 +1186,7 @@ function getLocaleExtraDayPeriodRules(locale) {
  * You should fallback to AM/PM when there are no day periods available.
  *
  * Note: this is only available if you load the full locale data.
- * See the {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import additional locale
+ * See the ["I18n guide"](guide/i18n#i18n-pipes) to know how to import additional locale
  * data.
  *
  * @experimental i18n support is experimental.
@@ -4687,15 +4687,25 @@ var AsyncPipe = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * Transforms text to lowercase.
+ * Transforms text to all lower case.
  *
- * {@example  common/pipes/ts/lowerupper_pipe.ts region='LowerUpperPipe' }
+ * @see `UpperCasePipe`
+ * @see `TitleCasePipe`
+ * @usageNotes
+ *
+ * The following example defines a view that allows the user to enter
+ * text, and then uses the pipe to convert the input text to all lower case.
+ *
+ * <code-example path="common/pipes/ts/lowerupper_pipe.ts" region='LowerUpperPipe'></code-example>
  *
  *
  */
 var LowerCasePipe = /** @class */ (function () {
     function LowerCasePipe() {
     }
+    /**
+     * @param value The string to transform to lower case.
+     */
     LowerCasePipe.prototype.transform = function (value) {
         if (!value)
             return value;
@@ -4719,20 +4729,27 @@ var LowerCasePipe = /** @class */ (function () {
 //
 var unicodeWordMatch = /(?:[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0561-\u0587\u05D0-\u05EA\u05F0-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u08A0-\u08B4\u08B6-\u08BD\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D05-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E87\u0E88\u0E8A\u0E8D\u0E94-\u0E97\u0E99-\u0E9F\u0EA1-\u0EA3\u0EA5\u0EA7\u0EAA\u0EAB\u0EAD-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u170C\u170E-\u1711\u1720-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1877\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4B\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1CE9-\u1CEC\u1CEE-\u1CF1\u1CF5\u1CF6\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2C2E\u2C30-\u2C5E\u2C60-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312E\u3131-\u318E\u31A0-\u31BA\u31F0-\u31FF\u3400-\u4DB5\u4E00-\u9FEA\uA000-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7AE\uA7B0-\uA7B7\uA7F7-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB65\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC]|\uD800[\uDC00-\uDC0B\uDC0D-\uDC26\uDC28-\uDC3A\uDC3C\uDC3D\uDC3F-\uDC4D\uDC50-\uDC5D\uDC80-\uDCFA\uDE80-\uDE9C\uDEA0-\uDED0\uDF00-\uDF1F\uDF2D-\uDF40\uDF42-\uDF49\uDF50-\uDF75\uDF80-\uDF9D\uDFA0-\uDFC3\uDFC8-\uDFCF]|\uD801[\uDC00-\uDC9D\uDCB0-\uDCD3\uDCD8-\uDCFB\uDD00-\uDD27\uDD30-\uDD63\uDE00-\uDF36\uDF40-\uDF55\uDF60-\uDF67]|\uD802[\uDC00-\uDC05\uDC08\uDC0A-\uDC35\uDC37\uDC38\uDC3C\uDC3F-\uDC55\uDC60-\uDC76\uDC80-\uDC9E\uDCE0-\uDCF2\uDCF4\uDCF5\uDD00-\uDD15\uDD20-\uDD39\uDD80-\uDDB7\uDDBE\uDDBF\uDE00\uDE10-\uDE13\uDE15-\uDE17\uDE19-\uDE33\uDE60-\uDE7C\uDE80-\uDE9C\uDEC0-\uDEC7\uDEC9-\uDEE4\uDF00-\uDF35\uDF40-\uDF55\uDF60-\uDF72\uDF80-\uDF91]|\uD803[\uDC00-\uDC48\uDC80-\uDCB2\uDCC0-\uDCF2]|\uD804[\uDC03-\uDC37\uDC83-\uDCAF\uDCD0-\uDCE8\uDD03-\uDD26\uDD50-\uDD72\uDD76\uDD83-\uDDB2\uDDC1-\uDDC4\uDDDA\uDDDC\uDE00-\uDE11\uDE13-\uDE2B\uDE80-\uDE86\uDE88\uDE8A-\uDE8D\uDE8F-\uDE9D\uDE9F-\uDEA8\uDEB0-\uDEDE\uDF05-\uDF0C\uDF0F\uDF10\uDF13-\uDF28\uDF2A-\uDF30\uDF32\uDF33\uDF35-\uDF39\uDF3D\uDF50\uDF5D-\uDF61]|\uD805[\uDC00-\uDC34\uDC47-\uDC4A\uDC80-\uDCAF\uDCC4\uDCC5\uDCC7\uDD80-\uDDAE\uDDD8-\uDDDB\uDE00-\uDE2F\uDE44\uDE80-\uDEAA\uDF00-\uDF19]|\uD806[\uDCA0-\uDCDF\uDCFF\uDE00\uDE0B-\uDE32\uDE3A\uDE50\uDE5C-\uDE83\uDE86-\uDE89\uDEC0-\uDEF8]|\uD807[\uDC00-\uDC08\uDC0A-\uDC2E\uDC40\uDC72-\uDC8F\uDD00-\uDD06\uDD08\uDD09\uDD0B-\uDD30\uDD46]|\uD808[\uDC00-\uDF99]|\uD809[\uDC80-\uDD43]|[\uD80C\uD81C-\uD820\uD840-\uD868\uD86A-\uD86C\uD86F-\uD872\uD874-\uD879][\uDC00-\uDFFF]|\uD80D[\uDC00-\uDC2E]|\uD811[\uDC00-\uDE46]|\uD81A[\uDC00-\uDE38\uDE40-\uDE5E\uDED0-\uDEED\uDF00-\uDF2F\uDF40-\uDF43\uDF63-\uDF77\uDF7D-\uDF8F]|\uD81B[\uDF00-\uDF44\uDF50\uDF93-\uDF9F\uDFE0\uDFE1]|\uD821[\uDC00-\uDFEC]|\uD822[\uDC00-\uDEF2]|\uD82C[\uDC00-\uDD1E\uDD70-\uDEFB]|\uD82F[\uDC00-\uDC6A\uDC70-\uDC7C\uDC80-\uDC88\uDC90-\uDC99]|\uD835[\uDC00-\uDC54\uDC56-\uDC9C\uDC9E\uDC9F\uDCA2\uDCA5\uDCA6\uDCA9-\uDCAC\uDCAE-\uDCB9\uDCBB\uDCBD-\uDCC3\uDCC5-\uDD05\uDD07-\uDD0A\uDD0D-\uDD14\uDD16-\uDD1C\uDD1E-\uDD39\uDD3B-\uDD3E\uDD40-\uDD44\uDD46\uDD4A-\uDD50\uDD52-\uDEA5\uDEA8-\uDEC0\uDEC2-\uDEDA\uDEDC-\uDEFA\uDEFC-\uDF14\uDF16-\uDF34\uDF36-\uDF4E\uDF50-\uDF6E\uDF70-\uDF88\uDF8A-\uDFA8\uDFAA-\uDFC2\uDFC4-\uDFCB]|\uD83A[\uDC00-\uDCC4\uDD00-\uDD43]|\uD83B[\uDE00-\uDE03\uDE05-\uDE1F\uDE21\uDE22\uDE24\uDE27\uDE29-\uDE32\uDE34-\uDE37\uDE39\uDE3B\uDE42\uDE47\uDE49\uDE4B\uDE4D-\uDE4F\uDE51\uDE52\uDE54\uDE57\uDE59\uDE5B\uDE5D\uDE5F\uDE61\uDE62\uDE64\uDE67-\uDE6A\uDE6C-\uDE72\uDE74-\uDE77\uDE79-\uDE7C\uDE7E\uDE80-\uDE89\uDE8B-\uDE9B\uDEA1-\uDEA3\uDEA5-\uDEA9\uDEAB-\uDEBB]|\uD869[\uDC00-\uDED6\uDF00-\uDFFF]|\uD86D[\uDC00-\uDF34\uDF40-\uDFFF]|\uD86E[\uDC00-\uDC1D\uDC20-\uDFFF]|\uD873[\uDC00-\uDEA1\uDEB0-\uDFFF]|\uD87A[\uDC00-\uDFE0]|\uD87E[\uDC00-\uDE1D])\S*/g;
 /**
- * Transforms text to titlecase.
+ * Transforms text to title case.
+ * Capitalizes the first letter of each word, and transforms the
+ * rest of the word to lower case.
+ * Words are delimited by any whitespace character, such as a space, tab, or line-feed character.
  *
- * The pipe splits up a text into words, capitalizes the first letter of each word and transforms
- * the rest of the word into lowercase. In this case, whitespace characters (such as "space", "\t",
- * "\n", etc) are used as word separators.
+ * @see `LowerCasePipe`
+ * @see `UpperCasePipe`
  *
- * ## Example
- * {@example common/pipes/ts/titlecase_pipe.ts region='TitleCasePipe'}
+ * @usageNotes
+ * The following example shows the result of transforming various strings into title case.
+ *
+ * <code-example path="common/pipes/ts/titlecase_pipe.ts" region='TitleCasePipe'></code-example>
  *
  *
  */
 var TitleCasePipe = /** @class */ (function () {
     function TitleCasePipe() {
     }
+    /**
+     * @param value The string to transform to title case.
+     */
     TitleCasePipe.prototype.transform = function (value) {
         if (!value)
             return value;
@@ -4747,13 +4764,16 @@ var TitleCasePipe = /** @class */ (function () {
     return TitleCasePipe;
 }());
 /**
- * Transforms text to uppercase.
- *
- *
+ * Transforms text to all upper case.
+ * @see `LowerCasePipe`
+ * @see `TitleCasePipe`
  */
 var UpperCasePipe = /** @class */ (function () {
     function UpperCasePipe() {
     }
+    /**
+     * @param value The string to transform to upper case.
+     */
     UpperCasePipe.prototype.transform = function (value) {
         if (!value)
             return value;
@@ -4780,11 +4800,48 @@ var UpperCasePipe = /** @class */ (function () {
  * @ngModule CommonModule
  * @description
  *
- * Uses the function {@link formatDate} to format a date according to locale rules.
+ * Formats a date value according to locale rules.
  *
- * The following tabled describes the formatting options.
+ * Only the `en-US` locale data comes with Angular. To localize dates
+ * in another language, you must import the corresponding locale data.
+ * See the [I18n guide](guide/i18n#i18n-pipes) for more information.
  *
- *  | Field Type         | Format      | Description                                                   | Example Value                                              |
+ * @see `formatDate()`
+ *
+ *
+ * @usageNotes
+ *
+ * The result of this pipe is not reevaluated when the input is mutated. To avoid the need to
+ * reformat the date on every change-detection cycle, treat the date as an immutable object
+ * and change the reference when the pipe needs to run again.
+ *
+ * ### Pre-defined format options
+ *
+ * Examples are given in `en-US` locale.
+ *
+ * - `'short'`: equivalent to `'M/d/yy, h:mm a'` (`6/15/15, 9:03 AM`).
+ * - `'medium'`: equivalent to `'MMM d, y, h:mm:ss a'` (`Jun 15, 2015, 9:03:01 AM`).
+ * - `'long'`: equivalent to `'MMMM d, y, h:mm:ss a z'` (`June 15, 2015 at 9:03:01 AM
+ * GMT+1`).
+ * - `'full'`: equivalent to `'EEEE, MMMM d, y, h:mm:ss a zzzz'` (`Monday, June 15, 2015 at
+ * 9:03:01 AM GMT+01:00`).
+ * - `'shortDate'`: equivalent to `'M/d/yy'` (`6/15/15`).
+ * - `'mediumDate'`: equivalent to `'MMM d, y'` (`Jun 15, 2015`).
+ * - `'longDate'`: equivalent to `'MMMM d, y'` (`June 15, 2015`).
+ * - `'fullDate'`: equivalent to `'EEEE, MMMM d, y'` (`Monday, June 15, 2015`).
+ * - `'shortTime'`: equivalent to `'h:mm a'` (`9:03 AM`).
+ * - `'mediumTime'`: equivalent to `'h:mm:ss a'` (`9:03:01 AM`).
+ * - `'longTime'`: equivalent to `'h:mm:ss a z'` (`9:03:01 AM GMT+1`).
+ * - `'fullTime'`: equivalent to `'h:mm:ss a zzzz'` (`9:03:01 AM GMT+01:00`).
+ *
+ * ### Custom format options
+ *
+ * You can construct a format string using symbols to specify the components
+ * of a date-time value, as described in the following table.
+ * Format details depend on the locale.
+ * Fields marked with (*) are only available in the extra data set for the given locale.
+ *
+ *  | Field type         | Format      | Description                                                   | Example Value                                              |
  *  |--------------------|-------------|---------------------------------------------------------------|------------------------------------------------------------|
  *  | Era                | G, GG & GGG | Abbreviated                                                   | AD                                                         |
  *  |                    | GGGG        | Wide                                                          | Anno Domini                                                |
@@ -4840,30 +4897,40 @@ var UpperCasePipe = /** @class */ (function () {
  *  |                    | O, OO & OOO | Short localized GMT format                                    | GMT-8                                                      |
  *  |                    | OOOO        | Long localized GMT format                                     | GMT-08:00                                                  |
  *
+ * Note that timezone correction is not applied to an ISO string that has no time component, such as "2016-09-19"
  *
- * When the expression is a ISO string without time (e.g. 2016-09-19) the time zone offset is not
- * applied and the formatted text will have the same day, month and year of the expression.
+ * ### Format examples
  *
- * WARNINGS:
- * - this pipe has only access to en-US locale data by default. If you want to localize the dates
- *   in another language, you will have to import data for other locales.
- *   See the {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import additional locale
- *   data.
- * - Fields suffixed with * are only available in the extra dataset.
- *   See the {@linkDocs guide/i18n#i18n-pipes "I18n guide"} to know how to import extra locale
- *   data.
- * - this pipe is marked as pure hence it will not be re-evaluated when the input is mutated.
- *   Instead users should treat the date as an immutable object and change the reference when the
- *   pipe needs to re-run (this is to avoid reformatting the date on every change detection run
- *   which would be an expensive operation).
+ * These examples transform a date into various formats,
+ * assuming that `dateObj` is a JavaScript `Date` object for
+ * year: 2015, month: 6, day: 15, hour: 21, minute: 43, second: 11,
+ * given in the local time for the `en-US` locale.
  *
- * ### Examples
+ * ```
+ * {{ dateObj | date }}               // output is 'Jun 15, 2015'
+ * {{ dateObj | date:'medium' }}      // output is 'Jun 15, 2015, 9:43:11 PM'
+ * {{ dateObj | date:'shortTime' }}   // output is '9:43 PM'
+ * {{ dateObj | date:'mmss' }}        // output is '43:11'
+ * ```
  *
- * Assuming `dateObj` is (year: 2015, month: 6, day: 15, hour: 21, minute: 43, second: 11)
- * in the _local_ time and locale is 'en-US':
+ * ### Usage example
  *
- * {@example common/pipes/ts/date_pipe.ts region='DatePipe'}
+ * The following component uses a date pipe to display the current date in different formats.
  *
+ * ```
+ * @Component({
+ *  selector: 'date-pipe',
+ *  template: `<div>
+ *    <p>Today is {{today | date}}</p>
+ *    <p>Or if you prefer, {{today | date:'fullDate'}}</p>
+ *    <p>The time is {{today | date:'h:mm a z'}}</p>
+ *  </div>`
+ * })
+ * // Get the current date and time as a date-time value.
+ * export class DatePipeComponent {
+ *   today: number = Date.now();
+ * }
+ * ```
  *
  */
 // clang-format on
@@ -4872,29 +4939,17 @@ var DatePipe = /** @class */ (function () {
         this.locale = locale;
     }
     /**
-     * @param value a date object or a number (milliseconds since UTC epoch) or an ISO string
-     * (https://www.w3.org/TR/NOTE-datetime).
-     * @param format indicates which date/time components to include. The format can be predefined as
-     *   shown below (all examples are given for `en-US`) or custom as shown in the table.
-     *   - `'short'`: equivalent to `'M/d/yy, h:mm a'` (e.g. `6/15/15, 9:03 AM`).
-     *   - `'medium'`: equivalent to `'MMM d, y, h:mm:ss a'` (e.g. `Jun 15, 2015, 9:03:01 AM`).
-     *   - `'long'`: equivalent to `'MMMM d, y, h:mm:ss a z'` (e.g. `June 15, 2015 at 9:03:01 AM
-     * GMT+1`).
-     *   - `'full'`: equivalent to `'EEEE, MMMM d, y, h:mm:ss a zzzz'` (e.g. `Monday, June 15, 2015 at
-     * 9:03:01 AM GMT+01:00`).
-     *   - `'shortDate'`: equivalent to `'M/d/yy'` (e.g. `6/15/15`).
-     *   - `'mediumDate'`: equivalent to `'MMM d, y'` (e.g. `Jun 15, 2015`).
-     *   - `'longDate'`: equivalent to `'MMMM d, y'` (e.g. `June 15, 2015`).
-     *   - `'fullDate'`: equivalent to `'EEEE, MMMM d, y'` (e.g. `Monday, June 15, 2015`).
-     *   - `'shortTime'`: equivalent to `'h:mm a'` (e.g. `9:03 AM`).
-     *   - `'mediumTime'`: equivalent to `'h:mm:ss a'` (e.g. `9:03:01 AM`).
-     *   - `'longTime'`: equivalent to `'h:mm:ss a z'` (e.g. `9:03:01 AM GMT+1`).
-     *   - `'fullTime'`: equivalent to `'h:mm:ss a zzzz'` (e.g. `9:03:01 AM GMT+01:00`).
-     * @param timezone to be used for formatting the time. It understands UTC/GMT and the continental
-     * US time zone
-     *  abbreviations, but for general use, use a time zone offset (e.g. `'+0430'`).
-     * @param locale a `string` defining the locale to use (uses the current {@link LOCALE_ID} by
-     * default).
+     * @param value The date expression: a `Date` object,  a number
+     * (milliseconds since UTC epoch), or an ISO string (https://www.w3.org/TR/NOTE-datetime).
+     * @param format The date/time components to include, using predefined options or a
+     * custom format string.
+     * @param timezone A timezone offset (such as `'+0430'`), or a standard
+     * UTC/GMT or continental US timezone abbreviation. Default is
+     * the local system timezone of the end-user's machine.
+     * @param locale A locale code for the locale format rules to use.
+     * When not supplied, uses the value of `LOCALE_ID`, which is `en-US` by default.
+     * See [Setting your app locale](guide/i18n#setting-up-the-locale-of-your-app).
+     * @returns A date string in the desired format.
      */
     DatePipe.prototype.transform = function (value, format, timezone, locale) {
         if (format === void 0) { format = 'mediumDate'; }
@@ -5028,9 +5083,13 @@ var I18nSelectPipe = /** @class */ (function () {
  * @ngModule CommonModule
  * @description
  *
- * Converts value into string using `JSON.stringify`. Useful for debugging.
+ * Converts a value into its JSON-format representation.  Useful for debugging.
  *
- * ### Example
+ * @usageNotes
+ *
+ * The following component uses a JSON pipe to convert an object
+ * to JSON format, and displays the string in both formats for comparison.
+
  * {@example common/pipes/ts/json_pipe.ts region='JsonPipe'}
  *
  *
@@ -5038,6 +5097,9 @@ var I18nSelectPipe = /** @class */ (function () {
 var JsonPipe = /** @class */ (function () {
     function JsonPipe() {
     }
+    /**
+     * @param value A value of any type to convert into a JSON-format string.
+     */
     JsonPipe.prototype.transform = function (value) { return JSON.stringify(value, null, 2); };
     JsonPipe.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"], args: [{ name: 'json', pure: false },] }
@@ -5056,14 +5118,19 @@ var JsonPipe = /** @class */ (function () {
  * @ngModule CommonModule
  * @description
  *
- * Uses the function {@link formatNumber} to format a number according to locale rules.
+ * Transforms a number into a string,
+ * formatted according to locale rules that determine group sizing and
+ * separator, decimal-point character, and other locale-specific
+ * configurations.
  *
- * Formats a number as text. Group sizing and separator and other locale-specific
- * configurations are based on the locale.
+ * @see `formatNumber()`
  *
- * ### Example
+ * @usageNotes
+ * The following code shows how the pipe transforms numbers
+ * into text strings, according to various format specifications,
+ * where the caller's default locale is `en-US`.
  *
- * {@example common/pipes/ts/number_pipe.ts region='NumberPipe'}
+ * <code-example path="common/pipes/ts/number_pipe.ts" region='NumberPipe'></code-example>
  *
  *
  */
@@ -5072,16 +5139,19 @@ var DecimalPipe = /** @class */ (function () {
         this._locale = _locale;
     }
     /**
-     * @param value a number to be formatted.
-     * @param digitsInfo a `string` which has a following format: <br>
+     * @param value The number to be formatted.
+     * @param digitsInfo Decimal representation options, specified by a string
+     * in the following format:<br>
      * <code>{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}</code>.
-     *   - `minIntegerDigits` is the minimum number of integer digits to use. Defaults to `1`.
-     *   - `minFractionDigits` is the minimum number of digits after the decimal point. Defaults to
-     * `0`.
-     *   - `maxFractionDigits` is the maximum number of digits after the decimal point. Defaults to
-     * `3`.
-     * @param locale a `string` defining the locale to use (uses the current {@link LOCALE_ID} by
-     * default).
+     *   - `minIntegerDigits`: The minimum number of integer digits before the decimal point.
+     * Default is `1`.
+     *   - `minFractionDigits`: The minimum number of digits after the decimal point.
+     * Default is `0`.
+     *   - `maxFractionDigits`: The maximum number of digits after the decimal point.
+     * Default is `3`.
+     * @param locale A locale code for the locale format rules to use.
+     * When not supplied, uses the value of `LOCALE_ID`, which is `en-US` by default.
+     * See [Setting your app locale](guide/i18n#setting-up-the-locale-of-your-app).
      */
     DecimalPipe.prototype.transform = function (value, digitsInfo, locale) {
         if (isEmpty(value))
@@ -5108,12 +5178,19 @@ var DecimalPipe = /** @class */ (function () {
  * @ngModule CommonModule
  * @description
  *
- * Uses the function {@link formatPercent} to format a number as a percentage according
- * to locale rules.
+ * Transforms a number to a percentage
+ * string, formatted according to locale rules that determine group sizing and
+ * separator, decimal-point character, and other locale-specific
+ * configurations.
  *
- * ### Example
+ * @see `formatPercent()`
  *
- * {@example common/pipes/ts/percent_pipe.ts region='PercentPipe'}
+ * @usageNotes
+ * The following code shows how the pipe transforms numbers
+ * into text strings, according to various format specifications,
+ * where the caller's default locale is `en-US`.
+ *
+ * <code-example path="common/pipes/ts/percent_pipe.ts" region='PercentPipe'></code-example>
  *
  *
  */
@@ -5123,10 +5200,19 @@ var PercentPipe = /** @class */ (function () {
     }
     /**
      *
-     * @param value a number to be formatted as a percentage.
-     * @param digitsInfo see {@link DecimalPipe} for more details.
-     * @param locale a `string` defining the locale to use (uses the current {@link LOCALE_ID} by
-   * default).
+     * @param value The number to be formatted as a percentage.
+     * @param digitsInfo Decimal representation options, specified by a string
+     * in the following format:<br>
+     * <code>{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}</code>.
+     *   - `minIntegerDigits`: The minimum number of integer digits before the decimal point.
+     * Default is `1`.
+     *   - `minFractionDigits`: The minimum number of digits after the decimal point.
+     * Default is `0`.
+     *   - `maxFractionDigits`: The maximum number of digits after the decimal point.
+     * Default is `3`.
+     * @param locale A locale code for the locale format rules to use.
+     * When not supplied, uses the value of `LOCALE_ID`, which is `en-US` by default.
+     * See [Setting your app locale](guide/i18n#setting-up-the-locale-of-your-app).
      */
     PercentPipe.prototype.transform = function (value, digitsInfo, locale) {
         if (isEmpty(value))
@@ -5153,12 +5239,19 @@ var PercentPipe = /** @class */ (function () {
  * @ngModule CommonModule
  * @description
  *
- * Uses the functions {@link getCurrencySymbol} and {@link formatCurrency} to format a
- * number as currency using locale rules.
+ * Transforms a number to a currency string, formatted according to locale rules
+ * that determine group sizing and separator, decimal-point character,
+ * and other locale-specific configurations.
  *
- * ### Example
+ * @see `getCurrencySymbol()`
+ * @see `formatCurrency()`
  *
- * {@example common/pipes/ts/currency_pipe.ts region='CurrencyPipe'}
+ * @usageNotes
+ * The following code shows how the pipe transforms numbers
+ * into text strings, according to various format specifications,
+ * where the caller's default locale is `en-US`.
+ *
+ * <code-example path="common/pipes/ts/currency_pipe.ts" region='CurrencyPipe'></code-example>
  *
  *
  */
@@ -5168,20 +5261,31 @@ var CurrencyPipe = /** @class */ (function () {
     }
     /**
      *
-     * @param value a number to be formatted as currency.
-     * @param currencyCodeis the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code,
+     * @param value The number to be formatted as currency.
+     * @param currencyCode The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code,
      * such as `USD` for the US dollar and `EUR` for the euro.
-     * @param display indicates whether to show the currency symbol, the code or a custom value:
-     *   - `code`: use code (e.g. `USD`).
-     *   - `symbol`(default): use symbol (e.g. `$`).
-     *   - `symbol-narrow`: some countries have two symbols for their currency, one regular and one
-     *     narrow (e.g. the canadian dollar CAD has the symbol `CA$` and the symbol-narrow `$`).
-     *   - `string`: use this value instead of a code or a symbol.
-     *   - boolean (deprecated from v5): `true` for symbol and false for `code`.
-     *   If there is no narrow symbol for the chosen currency, the regular symbol will be used.
-     * @param digitsInfo see {@link DecimalPipe} for more details.
-     * @param locale a `string` defining the locale to use (uses the current {@link LOCALE_ID} by
-     * default).
+     * @param display The format for the currency indicator. One of the following:
+     *   - `code`: Show the code (such as `USD`).
+     *   - `symbol`(default): Show the symbol (such as `$`).
+     *   - `symbol-narrow`: Use the narrow symbol for locales that have two symbols for their
+     * currency.
+     * For example, the Canadian dollar CAD has the symbol `CA$` and the symbol-narrow `$`. If the
+     * locale has no narrow symbol, uses the standard symbol for the locale.
+     *   - String: Use the given string value instead of a code or a symbol.
+     *   - Boolean (marked deprecated in v5): `true` for symbol and false for `code`.
+     *
+     * @param digitsInfo Decimal representation options, specified by a string
+     * in the following format:<br>
+     * <code>{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}</code>.
+     *   - `minIntegerDigits`: The minimum number of integer digits before the decimal point.
+     * Default is `1`.
+     *   - `minFractionDigits`: The minimum number of digits after the decimal point.
+     * Default is `0`.
+     *   - `maxFractionDigits`: The maximum number of digits after the decimal point.
+     * Default is `3`.
+     * @param locale A locale code for the locale format rules to use.
+     * When not supplied, uses the value of `LOCALE_ID`, which is `en-US` by default.
+     * See [Setting your app locale](guide/i18n#setting-up-the-locale-of-your-app).
      */
     CurrencyPipe.prototype.transform = function (value, currencyCode, display, digitsInfo, locale) {
         if (display === void 0) { display = 'symbol'; }
@@ -5224,7 +5328,7 @@ function isEmpty(value) {
     return value == null || value === '' || value !== value;
 }
 /**
- * Transforms a string into a number (if needed)
+ * Transforms a string into a number (if needed).
  */
 function strToNumber(value) {
     // Convert strings to numbers
@@ -5454,7 +5558,7 @@ function isPlatformWorkerUi(platformId) {
  * @description
  * Entry point for all public APIs of the common package.
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('6.0.4');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('6.0.7');
 
 /**
  * @license
@@ -5551,7 +5655,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -7318,12 +7422,13 @@ var HttpXsrfInterceptor = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * An `HttpHandler` that applies a bunch of `HttpInterceptor`s
+ * An injectable `HttpHandler` that applies multiple interceptors
  * to a request before passing it to the given `HttpBackend`.
  *
  * The interceptors are loaded lazily from the injector, to allow
  * interceptors to themselves inject classes depending indirectly
  * on `HttpInterceptingHandler` itself.
+ * @see `HttpInterceptor`
  */
 var HttpInterceptingHandler = /** @class */ (function () {
     function HttpInterceptingHandler(backend, injector) {
@@ -7349,6 +7454,15 @@ var HttpInterceptingHandler = /** @class */ (function () {
     return HttpInterceptingHandler;
 }());
 /**
+ * Constructs an `HttpHandler` that applies interceptors
+ * to a request before passing it to the given `HttpBackend`.
+ *
+ * Use as a factory function within `HttpClientModule`.
+ *
+ *
+ */
+
+/**
  * Factory function that determines where to store JSONP callbacks.
  *
  * Ordinarily JSONP callbacks are stored on the `window` object, but this may not exist
@@ -7363,14 +7477,14 @@ function jsonpCallbackContext() {
     return {};
 }
 /**
- * `NgModule` which adds XSRF protection support to outgoing requests.
+ * An NgModule that adds XSRF protection support to outgoing requests.
  *
- * Provided the server supports a cookie-based XSRF protection system, this
- * module can be used directly to configure XSRF protection with the correct
+ * For a server that supports a cookie-based XSRF protection system,
+ * use directly to configure XSRF protection with the correct
  * cookie and header names.
  *
- * If no such names are provided, the default is to use `X-XSRF-TOKEN` for
- * the header name and `XSRF-TOKEN` for the cookie name.
+ * If no names are supplied, the default cookie name is `XSRF-TOKEN`
+ * and the default header name is `X-XSRF-TOKEN`.
  *
  *
  */
@@ -7389,8 +7503,12 @@ var HttpClientXsrfModule = /** @class */ (function () {
         };
     };
     /**
-     * Configure XSRF protection to use the given cookie name or header name,
-     * or the default names (as described above) if not provided.
+     * Configure XSRF protection.
+     * @param options An object that can specify either or both
+     * cookie name or header name.
+     * - Cookie name default is `XSRF-TOKEN`.
+     * - Header name default is `X-XSRF-TOKEN`.
+     *
      */
     HttpClientXsrfModule.withOptions = function (options) {
         if (options === void 0) { options = {}; }
@@ -7416,7 +7534,7 @@ var HttpClientXsrfModule = /** @class */ (function () {
     return HttpClientXsrfModule;
 }());
 /**
- * `NgModule` which provides the `HttpClient` and associated services.
+ * An NgModule that provides the `HttpClient` and associated services.
  *
  * Interceptors can be added to the chain behind `HttpClient` by binding them
  * to the multiprovider for `HTTP_INTERCEPTORS`.
@@ -7428,12 +7546,18 @@ var HttpClientModule = /** @class */ (function () {
     }
     HttpClientModule.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"], args: [{
+                    /**
+                     * Optional configuration for XSRF protection.
+                     */
                     imports: [
                         HttpClientXsrfModule.withOptions({
                             cookieName: 'XSRF-TOKEN',
                             headerName: 'X-XSRF-TOKEN',
                         }),
                     ],
+                    /**
+                     * The module provides `HttpClient` itself, and supporting services.
+                     */
                     providers: [
                         HttpClient,
                         { provide: HttpHandler, useClass: HttpInterceptingHandler },
@@ -7447,7 +7571,7 @@ var HttpClientModule = /** @class */ (function () {
     return HttpClientModule;
 }());
 /**
- * `NgModule` which enables JSONP support in `HttpClient`.
+ * An NgModule that enables JSONP support in `HttpClient`.
  *
  * Without this module, Jsonp requests will reach the backend
  * with method JSONP, where they'll be rejected.
@@ -7737,7 +7861,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeSummaryDuplicates", function() { return removeSummaryDuplicates; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -8067,7 +8191,7 @@ var Version = /** @class */ (function () {
  * @description
  * Entry point for all public APIs of the common package.
  */
-var VERSION = new Version('6.0.4');
+var VERSION = new Version('6.0.7');
 
 /**
  * @license
@@ -31248,7 +31372,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -31344,16 +31468,14 @@ function defineInjector(options) {
  * overrides the above behavior and marks the token as belonging to a particular `@NgModule`. As
  * mentioned above, `'root'` is the default value for `providedIn`.
  *
- * ### Example
- *
- * #### Tree-shakeable InjectionToken
- *
- * {@example core/di/ts/injector_spec.ts region='ShakeableInjectionToken'}
- *
- * #### Plain InjectionToken
+ * @usageNotes
+ * ### Basic Example
  *
  * {@example core/di/ts/injector_spec.ts region='InjectionToken'}
  *
+ * ### Tree-shakeable Example
+ *
+ * {@example core/di/ts/injector_spec.ts region='ShakeableInjectionToken'}
  *
  */
 var InjectionToken = /** @class */ (function () {
@@ -31518,6 +31640,7 @@ function makePropDecorator(name, props, parentClass) {
  * All components that are referenced in the `useValue` value (either directly
  * or in a nested array or map) will be added to the `entryComponents` property.
  *
+ * @usageNotes
  * ### Example
  * The following example shows how the router can populate the `entryComponents`
  * field of an NgModule based on the router configuration which refers
@@ -31550,17 +31673,16 @@ var ANALYZE_FOR_ENTRY_COMPONENTS = new InjectionToken('AnalyzeForEntryComponents
 /**
  * Attribute decorator and metadata.
  *
- *
  * @Annotation
  */
 var Attribute = makeParamDecorator('Attribute', function (attributeName) { return ({ attributeName: attributeName }); });
 /**
  * Base class for query metadata.
  *
- * See {@link ContentChildren}, {@link ContentChild}, {@link ViewChildren}, {@link ViewChild} for
- * more information.
- *
- *
+ * @see `ContentChildren`.
+ * @see `ContentChild`.
+ * @see `ViewChildren`.
+ * @see `ViewChild`.
  */
 var Query = /** @class */ (function () {
     function Query() {
@@ -31590,7 +31712,6 @@ var ContentChild = makePropDecorator('ContentChild', function (selector, data) {
 /**
  * ViewChildren decorator and metadata.
  *
- *
  * @Annotation
  */
 var ViewChildren = makePropDecorator('ViewChildren', function (selector, data) {
@@ -31599,7 +31720,6 @@ var ViewChildren = makePropDecorator('ViewChildren', function (selector, data) {
 }, Query);
 /**
  * ViewChild decorator and metadata.
- *
  *
  * @Annotation
  */
@@ -31679,10 +31799,7 @@ function isDefaultChangeDetectionStrategy(changeDetectionStrategy) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * Directive decorator and metadata.
- *
- *
- * @Annotation
+ * Type of the Component metadata.
  */
 var Directive = makeDecorator('Directive', function (dir) {
     if (dir === void 0) { dir = {}; }
@@ -31691,6 +31808,88 @@ var Directive = makeDecorator('Directive', function (dir) {
 /**
  * Component decorator and metadata.
  *
+ * @usageNotes
+ *
+ * ### Using animations
+ *
+ * The following snippet shows an animation trigger in a component's
+ * metadata. The trigger is attached to an element in the component's
+ * template, using "@_trigger_name_", and a state expression that is evaluated
+ * at run time to determine whether the animation should start.
+ *
+ * ```typescript
+ * @Component({
+ *   selector: 'animation-cmp',
+ *   templateUrl: 'animation-cmp.html',
+ *   animations: [
+ *     trigger('myTriggerName', [
+ *       state('on', style({ opacity: 1 }),
+ *       state('off', style({ opacity: 0 }),
+ *       transition('on => off', [
+ *         animate("1s")
+ *       ])
+ *     ])
+ *   ]
+ * })
+ * ```
+ *
+ * ```html
+ * <!-- animation-cmp.html -->
+ * <div @myTriggerName="expression">...</div>
+ * ```
+ *
+ * ### Preserving whitespace
+ *
+ * Removing whitespace can greatly reduce AOT-generated code size, and speed up view creation.
+ * As of Angular 6, default for `preserveWhitespaces` is false (whitespace is removed).
+ * To change the default setting for all components in your application, set
+ * the `preserveWhitespaces` option of the AOT compiler.
+ *
+ * Current implementation removes whitespace characters as follows:
+ * - Trims all whitespaces at the beginning and the end of a template.
+ * - Removes whitespace-only text nodes. For example,
+ * `<button>Action 1</button>  <button>Action 2</button>` becomes
+ * `<button>Action 1</button><button>Action 2</button>`.
+ * - Replaces a series of whitespace characters in text nodes with a single space.
+ * For example, `<span>\n some text\n</span>` becomes `<span> some text </span>`.
+ * - Does NOT alter text nodes inside HTML tags such as `<pre>` or `<textarea>`,
+ * where whitespace characters are significant.
+ *
+ * Note that these transformations can influence DOM nodes layout, although impact
+ * should be minimal.
+ *
+ * You can override the default behavior to preserve whitespace characters
+ * in certain fragments of a template. For example, you can exclude an entire
+ * DOM sub-tree by using the `ngPreserveWhitespaces` attribute:
+ *
+ * ```html
+ * <div ngPreserveWhitespaces>
+ *     whitespaces are preserved here
+ *     <span>    and here </span>
+ * </div>
+ * ```
+ *
+ * You can force a single space to be preserved in a text node by using `&ngsp;`,
+ * which is replaced with a space character by Angular's template
+ * compiler:
+ *
+ * ```html
+ * <a>Spaces</a>&ngsp;<a>between</a>&ngsp;<a>links.</a>
+ * <!-->compiled to be equivalent to:</>
+ *  <a>Spaces</a> <a>between</a> <a>links.</a>
+ * ```
+ *
+ * Note that sequences of `&ngsp;` are still collapsed to just one space character when
+ * the `preserveWhitespaces` option is set to `false`.
+ *
+ * ```html
+ * <a>before</a>&ngsp;&ngsp;&ngsp;<a>after</a>
+ * <!-->compiled to be equivalent to:</>
+ *  <a>Spaces</a> <a>between</a> <a>links.</a>
+ * ```
+ *
+ * To preserve sequences of whitespace characters, use the
+ * `ngPreserveWhitespaces` attribute.
  *
  * @Annotation
  */
@@ -31699,42 +31898,54 @@ var Component = makeDecorator('Component', function (c) {
     return (Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ changeDetection: ChangeDetectionStrategy.Default }, c));
 }, Directive);
 /**
- * Pipe decorator and metadata.
- *
- * Use the `@Pipe` annotation to declare that a given class is a pipe. A pipe
- * class must also implement {@link PipeTransform} interface.
- *
- * To use the pipe include a reference to the pipe class in
- * {@link NgModule#declarations}.
  *
  *
  * @Annotation
  */
 var Pipe = makeDecorator('Pipe', function (p) { return (Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"])({ pure: true }, p)); });
 /**
- * Input decorator and metadata.
- *
  *
  * @Annotation
  */
 var Input = makePropDecorator('Input', function (bindingPropertyName) { return ({ bindingPropertyName: bindingPropertyName }); });
 /**
- * Output decorator and metadata.
- *
  *
  * @Annotation
  */
 var Output = makePropDecorator('Output', function (bindingPropertyName) { return ({ bindingPropertyName: bindingPropertyName }); });
 /**
- * HostBinding decorator and metadata.
- *
  *
  * @Annotation
  */
 var HostBinding = makePropDecorator('HostBinding', function (hostPropertyName) { return ({ hostPropertyName: hostPropertyName }); });
 /**
- * HostListener decorator and metadata.
+ * Binds a CSS event to a host listener and supplies configuration metadata.
+ * Angular invokes the supplied handler method when the host element emits the specified event,
+ * and updates the bound element with the result.
+ * If the handler method returns false, applies `preventDefault` on the bound element.
  *
+ * @usageNotes
+ *
+ * The following example declares a directive
+ * that attaches a click listener to a button and counts clicks.
+ *
+ * ```
+ * @Directive({selector: 'button[counting]'})
+ * class CountClicks {
+ *   numberOfClicks = 0;
+ *
+ *   @HostListener('click', ['$event.target'])
+ *   onClick(btn) {
+ *     console.log('button', btn, 'number of clicks:', this.numberOfClicks++);
+ *  }
+ * }
+ *
+ * @Component({
+ *   selector: 'app',
+ *   template: '<button counting>Increment</button>',
+ * })
+ * class App {}
+ * ```
  *
  * @Annotation
  */
@@ -32094,10 +32305,10 @@ function getClosureSafeProperty(objWithPropertyToExtract, target) {
  * Allows to refer to references which are not yet defined.
  *
  * For instance, `forwardRef` is used when the `token` which we need to refer to for the purposes of
- * DI is declared,
- * but not yet defined. It is also used when the `token` which we use when creating a query is not
- * yet defined.
+ * DI is declared, but not yet defined. It is also used when the `token` which we use when creating
+ * a query is not yet defined.
  *
+ * @usageNotes
  * ### Example
  * {@example core/di/ts/forward_ref/forward_ref_spec.ts region='forward_ref'}
  * @experimental
@@ -32112,11 +32323,12 @@ function forwardRef(forwardRefFn) {
  *
  * Acts as the identity function when given a non-forward-ref value.
  *
- * ### Example ([live demo](http://plnkr.co/edit/GU72mJrk1fiodChcmiDR?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * {@example core/di/ts/forward_ref/forward_ref_spec.ts region='resolve_forward_ref'}
  *
- * See: {@link forwardRef}
+ * @see `forwardRef`
  * @experimental
  */
 function resolveForwardRef(type) {
@@ -32139,13 +32351,11 @@ function resolveForwardRef(type) {
 /**
  * Inject decorator and metadata.
  *
- *
  * @Annotation
  */
 var Inject = makeParamDecorator('Inject', function (token) { return ({ token: token }); });
 /**
  * Optional decorator and metadata.
- *
  *
  * @Annotation
  */
@@ -32153,20 +32363,17 @@ var Optional = makeParamDecorator('Optional');
 /**
  * Self decorator and metadata.
  *
- *
  * @Annotation
  */
 var Self = makeParamDecorator('Self');
 /**
  * SkipSelf decorator and metadata.
  *
- *
  * @Annotation
  */
 var SkipSelf = makeParamDecorator('SkipSelf');
 /**
  * Host decorator and metadata.
- *
  *
  * @Annotation
  */
@@ -32204,23 +32411,17 @@ var NullInjector = /** @class */ (function () {
     return NullInjector;
 }());
 /**
- * @usageNotes
- * ```
- * const injector: Injector = ...;
- * injector.get(...);
- * ```
- *
- * @description
- *
  * Concrete injectors implement this interface.
  *
- * For more details, see the {@linkDocs guide/dependency-injection "Dependency Injection Guide"}.
+ * For more details, see the ["Dependency Injection Guide"](guide/dependency-injection).
  *
+ * @usageNotes
  * ### Example
  *
  * {@example core/di/ts/injector_spec.ts region='Injector'}
  *
  * `Injector` returns itself when given `Injector` as a token:
+ *
  * {@example core/di/ts/injector_spec.ts region='injectInjector'}
  *
  *
@@ -32231,6 +32432,7 @@ var Injector = /** @class */ (function () {
     /**
      * Create a new Injector which is configure using `StaticProvider`s.
      *
+     * @usageNotes
      * ### Example
      *
      * {@example core/di/ts/provider_spec.ts region='ConstructorProvider'}
@@ -32637,7 +32839,6 @@ function convertInjectableProviderToFactory(type, provider) {
 /**
 * Injectable decorator and metadata.
 *
-*
 * @Annotation
 */
 var Injectable = makeDecorator('Injectable', undefined, undefined, undefined, function (injectableType, options) {
@@ -32658,10 +32859,10 @@ var Injectable = makeDecorator('Injectable', undefined, undefined, undefined, fu
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * Defines a schema that will allow:
- * - any non-Angular elements with a `-` in their name,
- * - any properties on elements with a `-` in their name which is the common rule for custom
- * elements.
+ * Defines a schema that allows an NgModule to contain the following:
+ * - Non-Angular elements named with dash case (`-`).
+ * - Element properties named with dash case (`-`).
+ * Dash case is the naming convention for custom elements.
  *
  *
  */
@@ -32669,7 +32870,7 @@ var CUSTOM_ELEMENTS_SCHEMA = {
     name: 'custom-elements'
 };
 /**
- * Defines a schema that will allow any property on any element.
+ * Defines a schema that allows any property on any element.
  *
  * @experimental
  */
@@ -32677,12 +32878,17 @@ var NO_ERRORS_SCHEMA = {
     name: 'no-errors-schema'
 };
 /**
- * NgModule decorator and metadata.
- *
+ * Decorator that marks the following class as an NgModule, and supplies
+ * configuration metadata for it.
  *
  * @Annotation
  */
-var NgModule = makeDecorator('NgModule', function (ngModule) { return ngModule; }, undefined, undefined, function (moduleType, metadata) {
+var NgModule = makeDecorator('NgModule', function (ngModule) { return ngModule; }, undefined, undefined, 
+/**
+ * Decorator that marks the following class as an NgModule, and supplies
+ * configuration metadata for it.
+ */
+function (moduleType, metadata) {
     var imports = (metadata && metadata.imports) || [];
     if (metadata && metadata.exports) {
         imports = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(imports, [metadata.exports]);
@@ -32760,7 +32966,7 @@ var Version = /** @class */ (function () {
     }
     return Version;
 }());
-var VERSION = new Version('6.0.4');
+var VERSION = new Version('6.0.7');
 
 /**
  * @license
@@ -32799,14 +33005,13 @@ function defaultErrorLogger(console) {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- *
- * @description
  * Provides a hook for centralized exception handling.
  *
  * The default implementation of `ErrorHandler` prints error messages to the `console`. To
  * intercept error handling, write a custom exception handler that replaces this default as
  * appropriate for your app.
  *
+ * @usageNotes
  * ### Example
  *
  * ```
@@ -32821,8 +33026,6 @@ function defaultErrorLogger(console) {
  * })
  * class MyModule {}
  * ```
- *
- *
  */
 var ErrorHandler = /** @class */ (function () {
     function ErrorHandler() {
@@ -32917,7 +33120,8 @@ function addKey(injector, key) {
  * Thrown when trying to retrieve a dependency by key from {@link Injector}, but the
  * {@link Injector} does not have a {@link Provider} for the given key.
  *
- * ### Example ([live demo](http://plnkr.co/edit/vq8D3FRB9aGbnWJqtEPE?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * class A {
@@ -32936,7 +33140,8 @@ function noProviderError(injector, key) {
 /**
  * Thrown when dependencies form a cycle.
  *
- * ### Example ([live demo](http://plnkr.co/edit/wYQdNos0Tzql3ei1EV9j?p=info))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * var injector = Injector.resolveAndCreate([
@@ -32960,7 +33165,8 @@ function cyclicDependencyError(injector, key) {
  * The `InstantiationError` class contains the original error plus the dependency graph which caused
  * this object to be instantiated.
  *
- * ### Example ([live demo](http://plnkr.co/edit/7aWYdcqTQsP0eNqEdUAf?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * class A {
@@ -32990,7 +33196,8 @@ function instantiationError(injector, originalException, originalStack, key) {
  * Thrown when an object other then {@link Provider} (or `Type`) is passed to {@link Injector}
  * creation.
  *
- * ### Example ([live demo](http://plnkr.co/edit/YatCFbPAMCL0JSSQ4mvH?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * expect(() => Injector.resolveAndCreate(["not a type"])).toThrowError();
@@ -33005,7 +33212,8 @@ function invalidProviderError(provider) {
  * Lack of annotation information prevents the {@link Injector} from determining which dependencies
  * need to be injected into the constructor.
  *
- * ### Example ([live demo](http://plnkr.co/edit/rHnZtlNS7vJOPQ6pcVkm?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * class A {
@@ -33047,7 +33255,8 @@ function noAnnotationError(typeOrFunc, params) {
 /**
  * Thrown when getting an object by index.
  *
- * ### Example ([live demo](http://plnkr.co/edit/bRs0SX2OTQiJzqvjgl8P?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * ```typescript
  * class A {}
@@ -33065,6 +33274,7 @@ function outOfBoundsError(index) {
 /**
  * Thrown when a multi provider and a regular provider are bound to the same token.
  *
+ * @usageNotes
  * ### Example
  *
  * ```typescript
@@ -33241,8 +33451,7 @@ var ResolvedReflectiveProvider_ = /** @class */ (function () {
     return ResolvedReflectiveProvider_;
 }());
 /**
- * An internal resolved representation of a factory function created by resolving {@link
- * Provider}.
+ * An internal resolved representation of a factory function created by resolving `Provider`.
  * @experimental
  */
 var ResolvedReflectiveFactory = /** @class */ (function () {
@@ -33286,10 +33495,10 @@ function resolveReflectiveFactory(provider) {
     return new ResolvedReflectiveFactory(factoryFn, resolvedDeps);
 }
 /**
- * Converts the {@link Provider} into {@link ResolvedProvider}.
+ * Converts the `Provider` into `ResolvedProvider`.
  *
- * {@link Injector} internally only uses {@link ResolvedProvider}, {@link Provider} contains
- * convenience provider syntax.
+ * `Injector` internally only uses `ResolvedProvider`, `Provider` contains convenience provider
+ * syntax.
  */
 function resolveReflectiveProvider(provider) {
     return new ResolvedReflectiveProvider_(ReflectiveKey.get(provider.provide), [resolveReflectiveFactory(provider)], provider.multi || false);
@@ -33304,9 +33513,8 @@ function resolveReflectiveProviders(providers) {
     return Array.from(resolvedProviderMap.values());
 }
 /**
- * Merges a list of ResolvedProviders into a list where
- * each key is contained exactly once and multi providers
- * have been merged.
+ * Merges a list of ResolvedProviders into a list where each key is contained exactly once and
+ * multi providers have been merged.
  */
 function mergeResolvedReflectiveProviders(providers, normalizedProvidersMap) {
     for (var i = 0; i < providers.length; i++) {
@@ -33434,7 +33642,8 @@ var UNDEFINED = new Object();
  * In typical use, application code asks for the dependencies in the constructor and they are
  * resolved by the `Injector`.
  *
- * ### Example ([live demo](http://plnkr.co/edit/jzjec0?p=preview))
+ * @usageNotes
+ * ### Example
  *
  * The following example creates an `Injector` configured to create `Engine` and `Car`.
  *
@@ -33466,9 +33675,10 @@ var ReflectiveInjector = /** @class */ (function () {
      * Turns an array of provider definitions into an array of resolved providers.
      *
      * A resolution is a process of flattening multiple nested arrays and converting individual
-     * providers into an array of {@link ResolvedReflectiveProvider}s.
+     * providers into an array of `ResolvedReflectiveProvider`s.
      *
-     * ### Example ([live demo](http://plnkr.co/edit/AiXTHi?p=preview))
+     * @usageNotes
+     * ### Example
      *
      * ```typescript
      * @Injectable()
@@ -33493,7 +33703,6 @@ var ReflectiveInjector = /** @class */ (function () {
      * });
      * ```
      *
-     * See {@link ReflectiveInjector#fromResolvedProviders fromResolvedProviders} for more info.
      */
     ReflectiveInjector.resolve = function (providers) {
         return resolveReflectiveProviders(providers);
@@ -33501,10 +33710,11 @@ var ReflectiveInjector = /** @class */ (function () {
     /**
      * Resolves an array of providers and creates an injector from those providers.
      *
-     * The passed-in providers can be an array of `Type`, {@link Provider},
+     * The passed-in providers can be an array of `Type`, `Provider`,
      * or a recursive array of more providers.
      *
-     * ### Example ([live demo](http://plnkr.co/edit/ePOccA?p=preview))
+     * @usageNotes
+     * ### Example
      *
      * ```typescript
      * @Injectable()
@@ -33519,11 +33729,6 @@ var ReflectiveInjector = /** @class */ (function () {
      * var injector = ReflectiveInjector.resolveAndCreate([Car, Engine]);
      * expect(injector.get(Car) instanceof Car).toBe(true);
      * ```
-     *
-     * This function is slower than the corresponding `fromResolvedProviders`
-     * because it needs to resolve the passed-in providers first.
-     * See {@link ReflectiveInjector#resolve resolve} and
-     * {@link ReflectiveInjector#fromResolvedProviders fromResolvedProviders}.
      */
     ReflectiveInjector.resolveAndCreate = function (providers, parent) {
         var ResolvedReflectiveProviders = ReflectiveInjector.resolve(providers);
@@ -33534,7 +33739,8 @@ var ReflectiveInjector = /** @class */ (function () {
      *
      * This API is the recommended way to construct injectors in performance-sensitive parts.
      *
-     * ### Example ([live demo](http://plnkr.co/edit/KrSMci?p=preview))
+     * @usageNotes
+     * ### Example
      *
      * ```typescript
      * @Injectable()
@@ -34582,6 +34788,7 @@ var wtfEndTimeRange = wtfEnabled ? endTimeRange : function (r) { return null; };
 /**
  * Use by directives and components to emit custom Events.
  *
+ * @usageNotes
  * ### Examples
  *
  * In the following example, `Zippy` alternatively emits `open` and `close` events when its
@@ -34619,6 +34826,8 @@ var wtfEndTimeRange = wtfEnabled ? endTimeRange : function (r) { return null; };
  * ```
  * <zippy (open)="onOpen($event)" (close)="onClose($event)"></zippy>
  * ```
+ *
+ * ### Notes
  *
  * Uses Rx.Observable but provides an adapter to make it work as specified here:
  * https://github.com/jhusain/observable-spec
@@ -34700,6 +34909,7 @@ var EventEmitter = /** @class */ (function (_super) {
  *   - link to runOutsideAngular/run (throughout this file!)
  *   -->
  *
+ * @usageNotes
  * ### Example
  *
  * ```
@@ -35360,8 +35570,6 @@ function getPlatform() {
  *
  * A page's platform is initialized implicitly when a platform is created via a platform factory
  * (e.g. {@link platformBrowser}), or explicitly by calling the {@link createPlatform} function.
- *
- *
  */
 var PlatformRef = /** @class */ (function () {
     /** @internal */
@@ -35375,7 +35583,8 @@ var PlatformRef = /** @class */ (function () {
      * Creates an instance of an `@NgModule` for the given platform
      * for offline compilation.
      *
-     * ## Simple Example
+     * @usageNotes
+     * ### Simple Example
      *
      * ```typescript
      * my_module.ts:
@@ -35427,7 +35636,8 @@ var PlatformRef = /** @class */ (function () {
     /**
      * Creates an instance of an `@NgModule` for a given platform using the given runtime compiler.
      *
-     * ## Simple Example
+     * @usageNotes
+     * ### Simple Example
      *
      * ```typescript
      * @NgModule({
@@ -35540,8 +35750,6 @@ function optionsReducer(dst, objs) {
 }
 /**
  * A reference to an Angular application running on a page.
- *
- *
  */
 var ApplicationRef = /** @class */ (function () {
     /** @internal */
@@ -35613,14 +35821,15 @@ var ApplicationRef = /** @class */ (function () {
     /**
      * Bootstrap a new component at the root level of the application.
      *
+     * @usageNotes
      * ### Bootstrap process
      *
      * When bootstrapping a new root component into an application, Angular mounts the
-     * specified application component onto DOM elements identified by the [componentType]'s
+     * specified application component onto DOM elements identified by the componentType's
      * selector and kicks off automatic change detection to finish initializing the component.
      *
      * Optionally, a component can be mounted onto a DOM element that does not match the
-     * [componentType]'s selector.
+     * componentType's selector.
      *
      * ### Example
      * {@example core/ts/platform/platform.ts region='longform'}
@@ -35948,14 +36157,14 @@ function getModuleFactory(id) {
  *
  * NOTE: In the future this class will implement an `Observable` interface.
  *
- * ### Example ([live demo](http://plnkr.co/edit/RX8sJnQYl9FWuSCWme5z?p=preview))
+ * @usageNotes
+ * ### Example
  * ```typescript
  * @Component({...})
  * class Container {
  *   @ViewChildren(Item) items:QueryList<Item>;
  * }
  * ```
- *
  */
 var QueryList = /** @class */ (function () {
     function QueryList() {
@@ -36197,9 +36406,10 @@ var ViewRef = /** @class */ (function (_super) {
  *
  * Properties of elements in a View can change, but the structure (number and order) of elements in
  * a View cannot. Changing the structure of Elements can only be done by inserting, moving or
- * removing nested Views via a {@link ViewContainerRef}. Each View can contain many View Containers.
+ * removing nested Views via a `ViewContainerRef`. Each View can contain many View Containers.
  * <!-- /TODO -->
  *
+ * @usageNotes
  * ### Example
  *
  * Given this template...
@@ -36211,9 +36421,10 @@ var ViewRef = /** @class */ (function (_super) {
  * </ul>
  * ```
  *
- * We have two {@link TemplateRef}s:
+ * We have two `TemplateRef`s:
  *
- * Outer {@link TemplateRef}:
+ * Outer `TemplateRef`:
+ *
  * ```
  * Count: {{items.length}}
  * <ul>
@@ -36221,14 +36432,15 @@ var ViewRef = /** @class */ (function (_super) {
  * </ul>
  * ```
  *
- * Inner {@link TemplateRef}:
+ * Inner `TemplateRef`:
+ *
  * ```
  *   <li>{{item}}</li>
  * ```
  *
- * Notice that the original template is broken down into two separate {@link TemplateRef}s.
+ * Notice that the original template is broken down into two separate `TemplateRef`s.
  *
- * The outer/inner {@link TemplateRef}s are then assembled into views like so:
+ * The outer/inner `TemplateRef`s are then assembled into views like so:
  *
  * ```
  * <!-- ViewRef: outer-0 -->
@@ -37513,11 +37725,12 @@ var IterableDiffers = /** @class */ (function () {
      * inherited {@link IterableDiffers} instance with the provided factories and return a new
      * {@link IterableDiffers} instance.
      *
+     * @usageNotes
+     * ### Example
+     *
      * The following example shows how to extend an existing list of factories,
      * which will only be applied to the injector for this component and its children.
      * This step is all that's required to make a new {@link IterableDiffer} available.
-     *
-     * ### Example
      *
      * ```
      * @Component({
@@ -37589,11 +37802,12 @@ var KeyValueDiffers = /** @class */ (function () {
      * inherited {@link KeyValueDiffers} instance with the provided factories and return a new
      * {@link KeyValueDiffers} instance.
      *
+     * @usageNotes
+     * ### Example
+     *
      * The following example shows how to extend an existing list of factories,
      * which will only be applied to the injector for this component and its children.
      * This step is all that's required to make a new {@link KeyValueDiffer} available.
-     *
-     * ### Example
      *
      * ```
      * @Component({
@@ -37692,8 +37906,9 @@ var platformCore = createPlatformFactory(null, 'core', _CORE_PLATFORM_PROVIDERS)
  * It is used for i18n extraction, by i18n pipes (DatePipe, I18nPluralPipe, CurrencyPipe,
  * DecimalPipe and PercentPipe) and by ICU expressions.
  *
- * See the {@linkDocs guide/i18n#setting-up-locale i18n guide} for more information.
+ * See the [i18n guide](guide/i18n#setting-up-locale) for more information.
  *
+ * @usageNotes
  * ### Example
  *
  * ```typescript
@@ -37713,8 +37928,9 @@ var LOCALE_ID = new InjectionToken('LocaleId');
  * Use this token at bootstrap to provide the content of your translation file (`xtb`,
  * `xlf` or `xlf2`) when you want to translate your application in another language.
  *
- * See the {@linkDocs guide/i18n#merge i18n guide} for more information.
+ * See the [i18n guide](guide/i18n#merge) for more information.
  *
+ * @usageNotes
  * ### Example
  *
  * ```typescript
@@ -37737,8 +37953,9 @@ var TRANSLATIONS = new InjectionToken('Translations');
  * Provide this token at bootstrap to set the format of your {@link TRANSLATIONS}: `xtb`,
  * `xlf` or `xlf2`.
  *
- * See the {@linkDocs guide/i18n#merge i18n guide} for more information.
+ * See the [i18n guide](guide/i18n#merge) for more information.
  *
+ * @usageNotes
  * ### Example
  *
  * ```typescript
@@ -37761,8 +37978,9 @@ var TRANSLATIONS_FORMAT = new InjectionToken('TranslationsFormat');
  * - Warning (default): show a warning in the console and/or shell.
  * - Ignore: do nothing.
  *
- * See the {@linkDocs guide/i18n#missing-translation i18n guide} for more information.
+ * See the [i18n guide](guide/i18n#missing-translation) for more information.
  *
+ * @usageNotes
  * ### Example
  * ```typescript
  * import { MissingTranslationStrategy } from '@angular/core';
@@ -39316,6 +39534,9 @@ function resolveNgModuleDep(data, depDef, notFoundValue) {
             data._providers[index] = UNDEFINED_VALUE;
             return (data._providers[index] =
                 _createProviderInstance$1(data, data._def.providersByKey[depDef.tokenKey]));
+        }
+        else if (depDef.flags & 4 /* Self */) {
+            return notFoundValue;
         }
         return data._parent.get(depDef.token, notFoundValue);
     }
@@ -45415,7 +45636,8 @@ var ViewRef$1 = /** @class */ (function () {
      *
      * <!-- TODO: Add a link to a chapter on OnPush components -->
      *
-     * ### Example ([live demo](https://stackblitz.com/edit/angular-kx7rrw))
+     * @usageNotes
+     * ### Example
      *
      * ```typescript
      * @Component({
@@ -45448,6 +45670,7 @@ var ViewRef$1 = /** @class */ (function () {
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
      * <!-- TODO: Add a live demo once ref.detectChanges is merged into master -->
      *
+     * @usageNotes
      * ### Example
      *
      * The following example defines a component with a large list of readonly data.
@@ -45498,7 +45721,8 @@ var ViewRef$1 = /** @class */ (function () {
      *
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
      *
-     * ### Example ([live demo](https://stackblitz.com/edit/angular-ymgsxw))
+     * @usageNotes
+     * ### Example
      *
      * The following example creates a component displaying `live` data. The component will detach
      * its change detector from the main change detector tree when the component's live property
@@ -45555,6 +45779,7 @@ var ViewRef$1 = /** @class */ (function () {
      * <!-- TODO: Add a link to a chapter on detach/reattach/local digest -->
      * <!-- TODO: Add a live demo once ref.detectChanges is merged into master -->
      *
+     * @usageNotes
      * ### Example
      *
      * The following example defines a component with a large list of readonly data.
@@ -47411,7 +47636,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -47848,7 +48073,7 @@ var CachedResourceLoader = /** @class */ (function (_super) {
  * @description
  * Entry point for all public APIs of the common package.
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.0.4');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.0.7');
 
 /**
  * @license
@@ -47961,7 +48186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /**
- * @license Angular v6.0.4
+ * @license Angular v6.0.7
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -50399,7 +50624,7 @@ var By = /** @class */ (function () {
  * @description
  * Entry point for all public APIs of the common package.
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.0.4');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('6.0.7');
 
 /**
  * @license
@@ -62845,9 +63070,12 @@ and limitations under the License.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = Object.setPrototypeOf ||
-    ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-    function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
 
 function __extends(d, b) {
     extendStatics(d, b);
@@ -62855,12 +63083,15 @@ function __extends(d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
 
-var __assign = Object.assign || function __assign(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
     }
-    return t;
+    return __assign.apply(this, arguments);
 }
 
 function __rest(s, e) {
