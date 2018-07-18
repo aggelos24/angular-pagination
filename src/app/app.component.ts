@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, OnDestroy {
 			this.changePage(this.page + 1);					//go to next page
 		}
 		else if (event.key == 'ArrowLeft' && this.page != 1) {			//if left arrow is pressed and current page isnt the 1st
-			this.changePage(this.page - 1);					//go to last page
+			this.changePage(this.page - 1);					//go to previous page
 		}
 	}
 
