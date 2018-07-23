@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 interface Size {
 	number: number;
@@ -18,8 +19,8 @@ interface Data {
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-	sizeSub;									//variables for managing subscriptions
-	dataSub;
+	sizeSub: Subscription;								//variables for managing subscriptions
+	dataSub: Subscription;
 	
 	page: number;									//current page
 	limit: number;									//page limit
