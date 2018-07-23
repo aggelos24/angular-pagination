@@ -123,7 +123,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy() {
-		this.sizeSub.unsubscribe();						//delete subscriptions to server
+		this.sizeSub.unsubscribe();						//end subscriptions
 		this.dataSub.unsubscribe();
 	}
 }
